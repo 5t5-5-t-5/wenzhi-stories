@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="description" content="讲给问之听的小故事：红色故事、成语寓言童话、找茬小故事、边界感故事。">
+<title>问之的故事</title>
+<style>
+:root{--bg:#f7f2e8;--ink:#2b2622;--muted:#7a6f66;--card:#fffdf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",sans-serif;font-size:19px;line-height:1.9}
+a{color:inherit}
+header.top{background:linear-gradient(135deg,#ff9a5a,#f25f5c 55%,#b84fd6);color:#fff;padding:26px 18px 20px;text-align:center}
+header.top h1{margin:0;font-size:34px;letter-spacing:4px;line-height:1.3}
+header.top p{margin:6px 0 0;font-size:16px;opacity:.92}
+nav.chips{position:sticky;top:0;z-index:10;background:rgba(247,242,232,.96);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:1px solid #e6dccb;padding:10px 10px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+nav.chips::-webkit-scrollbar{display:none}
+nav.chips a{flex:0 0 auto;text-decoration:none;font-size:16px;line-height:1;padding:10px 14px;border-radius:999px;background:#fff;border:2px solid var(--c,#b9ab98);color:var(--c,#5a5048);font-weight:600;white-space:nowrap}
+nav.chips a.on{background:var(--c,#5a5048);color:#fff}
+nav.chips a small{font-weight:400;opacity:.8;margin-left:3px}
+main{max-width:720px;margin:0 auto;padding:10px 14px 30px}
+.latest{background:#fff;border:3px dashed #f2a33a;border-radius:18px;padding:14px 16px;margin:16px 0 8px}
+.latest h2{margin:0 0 8px;font-size:21px}
+.latest ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.latest li a{display:inline-block;text-decoration:none;font-size:16px;line-height:1.4;padding:6px 10px;border-radius:10px;background:var(--t);border-left:5px solid var(--c)}
+section.cat{margin-top:26px}
+.cat-head{border-radius:18px;padding:16px 16px 12px;color:#fff;background:var(--c)}
+.cat-head h2{margin:0;font-size:25px;line-height:1.4}
+.cat-head h2 small{font-size:16px;font-weight:400;opacity:.9;margin-left:6px}
+.cat-head .intro{margin:6px 0 0;font-size:16px;line-height:1.7;opacity:.95}
+.toc{margin:10px 0 0}
+.toc summary{cursor:pointer;font-size:16px;font-weight:600;list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary::before{content:"📖 目录（点开）"}
+.toc[open] summary::before{content:"📖 目录（收起）"}
+.toc ol{margin:6px 0 0;padding-left:0;list-style:none;font-size:16px;line-height:1.5;columns:2;column-gap:12px}
+.toc li{margin:0 0 6px;break-inside:avoid}
+.toc a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+article.card{position:relative;background:var(--card);border-radius:20px;margin:22px 0 34px;padding:18px 18px 14px;border-top:10px solid var(--c);box-shadow:0 3px 0 var(--s),0 8px 22px rgba(60,40,20,.08);scroll-margin-top:70px}
+article.card:target{outline:4px solid var(--s)}
+.card-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:15px;line-height:1.4}
+.badge{background:var(--c);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
+.no{color:var(--c);font-weight:700;border:2px solid var(--c);padding:2px 9px;border-radius:999px}
+.new{background:#ffcf33;color:#6b4a00;padding:3px 8px;border-radius:999px;font-weight:700}
+.card-top .anchor{margin-left:auto;text-decoration:none;color:var(--muted);font-size:15px}
+article.card h3{margin:12px 0 2px;font-size:27px;line-height:1.35;color:var(--d)}
+.sub{margin:0 0 6px;color:var(--muted);font-size:16px;line-height:1.6}
+.body p{margin:0 0 .75em;text-indent:0}
+.box{border-radius:14px;padding:12px 14px;margin:14px 0}
+.box .label{display:inline-block;font-weight:800;font-size:17px;line-height:1.3;padding:5px 11px;border-radius:9px;margin-bottom:6px;color:#fff}
+.box p{margin:0 0 .4em}
+.box .q{font-weight:600}
+.stop{background:#fff4c7;border:3px solid #f1b51c}
+.stop .label{background:#e59a00}
+.opts{list-style:none;margin:6px 0 0;padding:0}
+.opts li{background:#fff;border:2px solid #f1c95a;border-radius:10px;padding:6px 10px;margin:0 0 8px}
+.find{background:#ffe9e7;border:3px dashed #e35d52}
+.find .label{background:#d9463b}
+.alt{background:#e3f6ea;border:3px solid #3fae6b}
+.alt .label{background:#2f9658}
+.think{background:#e3f6ea;border:3px dashed #3fae6b}
+.think .label{background:#2f9658}
+.talk{background:#e6f0ff;border:3px solid #6f9fe8;border-radius:22px 22px 22px 6px}
+.talk .label{background:#3f78d6}
+details.ans{margin-top:8px}
+details.ans summary{display:inline-block;cursor:pointer;list-style:none;font-size:17px;font-weight:700;line-height:1.3;padding:9px 14px;border-radius:12px;background:#fff;border:2px solid #b8aa99;color:#5a4d40;-webkit-user-select:none;user-select:none}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans summary::before{content:"👀 看参考答案"}
+details.ans[open] summary::before{content:"🙈 收起参考答案"}
+details.ans .ansbody{margin-top:10px;background:#fff;border-left:6px solid #9c8d7c;border-radius:8px;padding:10px 12px;color:#4a4038}
+details.ans .ansbody b{color:#7a5c3a}
+.card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #e0d4c2;margin-top:10px;padding-top:10px;font-size:15px;line-height:1.4}
+.card-foot button{font:inherit;background:none;border:2px solid var(--c);color:var(--c);border-radius:999px;padding:7px 12px;font-weight:600}
+.card-foot a{color:var(--muted);text-decoration:none;padding:7px 4px}
+footer{text-align:center;color:var(--muted);font-size:15px;line-height:1.7;padding:20px 14px 40px}
+#toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:rgba(40,30,20,.9);color:#fff;font-size:16px;line-height:1.4;padding:10px 16px;border-radius:12px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:20;max-width:90%}
+#toast.show{opacity:1}
+body.filtering .latest{display:none}
+</style>
+</head>
+<body id="top">
+<header class="top">
+  <h1>问之的故事</h1>
+  <p>讲给问之听 · 念到【停一下】先问问他</p>
+</header>
+<nav class="chips" id="chips">
+  <a href="#top" data-f="all" class="on">全部<small>35</small></a>
+  <a href="#latest" data-f="latest" style="--c:#d98a00">✨ 最新</a>
+  <a href="#cat-red" data-f="red" style="--c:#d23b3b;--t:#fae7e7;--d:#9d3434;--s:rgba(210,59,59,.3)">红色故事<small>3</small></a>
+  <a href="#cat-fable" data-f="fable" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">成语·寓言·童话<small>4</small></a>
+  <a href="#cat-school" data-f="school" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">学校里的找茬小故事<small>11</small></a>
+  <a href="#cat-out" data-f="out" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">学校外的找茬小故事<small>14</small></a>
+  <a href="#cat-boundary" data-f="boundary" style="--c:#8454c8;--t:#f0eaf8;--d:#674596;--s:rgba(132,84,200,.3)">边界感<small>3</small></a>
+</nav>
+<main>
+<div class="latest" id="latest"><h2>✨ 最新加入（9月26日，20 个）</h2><ul><li><a href="#school-2" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小胖抢着说</a></li><li><a href="#school-3" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">阿福拿橡皮</a></li><li><a href="#school-4" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小猪想当第一个</a></li><li><a href="#school-5" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">嘎嘎笑个不停</a></li><li><a href="#school-6" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小狮子输不起</a></li><li><a href="#school-7" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小卷毛的橙色脚印</a></li><li><a href="#school-8" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">飞毛腿撞上作业本</a></li><li><a href="#school-9" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小松鼠只借不还</a></li><li><a href="#school-10" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">闪闪发光的点点</a></li><li><a href="#school-11" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">小企鹅的弹力球</a></li><li><a href="#out-5" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">小熊抱大鱼</a></li><li><a href="#out-6" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">皮皮蹦沙发</a></li><li><a href="#out-7" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">嘟嘟按电梯</a></li><li><a href="#out-8" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">壮壮抢滑板车</a></li><li><a href="#out-9" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">花卷还要玩</a></li><li><a href="#out-10" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">臭袜子快乐</a></li><li><a href="#out-11" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">小土豆拿手机</a></li><li><a href="#out-12" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">妞妞摘花</a></li><li><a href="#out-13" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">大嘴巴分饼干</a></li><li><a href="#out-14" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">唱歌的小黄鸡</a></li></ul></div>
+<section class="cat" id="cat-red" data-cat="red" style="--c:#d23b3b;--t:#fae7e7;--d:#9d3434;--s:rgba(210,59,59,.3)">
+<div class="cat-head"><h2>红色故事<small>3 个</small></h2><p class="intro">每个故事中间有一个选择，讲到那里先停下来问问他。</p>
+<details class="toc"><summary></summary><ol><li><a href="#red-3">3. 狼牙山五壮士</a></li><li><a href="#red-2">2. 飞夺泸定桥</a></li><li><a href="#red-1">1. 小英雄雨来</a></li></ol></details></div>
+<article class="card" id="red-3" style="--c:#d23b3b;--t:#fae7e7;--d:#9d3434;--s:rgba(210,59,59,.3)">
+<div class="card-top"><span class="badge">红色故事</span><span class="no">第 3 则</span><a class="anchor" href="#red-3">🔗 本篇</a></div>
+<h3>狼牙山五壮士</h3>
+<div class="body">
+<p>1941年秋天，日本鬼子来打河北的狼牙山。敌人有三千五百多人。</p>
+<p>山上有我们的八路军大部队，还有好多老百姓。大家得赶快转移。</p>
+<p>谁来挡住鬼子呢？八路军七连六班的五个战士站了出来。班长叫马宝玉，副班长叫葛振林。还有三个战士，叫宋学义、胡德林、胡福才。</p>
+<p>五个人守在山上，一枪一枪地打。鬼子冲上来，被打下去。又冲上来，又被打下去。</p>
+<p>打到后来，大部队和老百姓都走远了。五个人也该撤了。</p>
+<p>可是眼前有两条路。一条路，能追上大部队。另一条路，通向高高的悬崖，走到头就没有路了。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是班长马宝玉，你走哪条路？</p><ul class="opts"><li>A. 走大部队那条路，和大家会合。</li><li>B. 走悬崖那条路。</li></ul></div>
+<p>班长想：我们要是往大部队那边走，鬼子就会跟过去，大部队和老百姓就危险了。</p>
+<p>他说：“走这边！”五个人故意把鬼子引向了悬崖。</p>
+<p>他们爬到山顶，接着打。子弹打光了，就搬起石头砸。鬼子越来越近。</p>
+<p>五个战士把枪砸坏，不留给鬼子。然后大喊“打倒日本帝国主义”，从悬崖上跳了下去。</p>
+<p>马宝玉、胡德林、胡福才牺牲了。葛振林和宋学义被半山腰的树枝挂住，活了下来。</p>
+<p>从那以后，大家都叫他们“狼牙山五壮士”。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>班长为什么要选那条没有路的路？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="red-3">复制本篇链接</button><a href="#cat-red">回到本类目录 ↑</a></div>
+</article><article class="card" id="red-2" style="--c:#d23b3b;--t:#fae7e7;--d:#9d3434;--s:rgba(210,59,59,.3)">
+<div class="card-top"><span class="badge">红色故事</span><span class="no">第 2 则</span><a class="anchor" href="#red-2">🔗 本篇</a></div>
+<h3>飞夺泸定桥</h3>
+<div class="body">
+<p>1935年5月，红军在长征路上，来到了四川的大渡河边。大渡河的水又急又凶，船过不去。河上只有一座桥，叫泸定桥。</p>
+<p>后面，国民党军在追红军。桥那头，也有国民党军守着。红军一定要赶快过桥。</p>
+<p>这个任务交给了红四团。团长叫王开湘，政委叫杨成武。他们离泸定桥还有240里路，必须在一天一夜里赶到。天下着大雨，路又滑又窄。战士们饿了，就边走边吃几口干粮，一步也没停，终于按时赶到了。</p>
+<p>可是到了桥边，大家都愣住了。泸定桥是用13根铁链拉起来的，桥上的木板全被敌人拆掉了，只剩下光溜溜的铁链在晃。桥下是哗哗的河水，桥那头，敌人的枪正对着这边。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是红军，你会怎么选？是等敌人走了再过桥？还是现在就抓着铁链爬过去？</p></div>
+<p>红军战士们知道，再等下去，敌人会越来越多，就再也过不去了。22个勇士站了出来，带头的是连长廖大珠。他们背着枪，抓着铁链，一点一点往前爬。后面的战士跟着爬，一边爬一边铺上木板。</p>
+<p>快到桥那头的时候，敌人放了一把大火。廖大珠大喊一声“冲啊！”，勇士们冲过大火，把敌人打跑了。</p>
+<p>泸定桥夺下来了！红军大部队一个接一个，从桥上过了大渡河。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>22个勇士爬铁链的时候害怕吗？他们为什么还要爬？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="red-2">复制本篇链接</button><a href="#cat-red">回到本类目录 ↑</a></div>
+</article><article class="card" id="red-1" style="--c:#d23b3b;--t:#fae7e7;--d:#9d3434;--s:rgba(210,59,59,.3)">
+<div class="card-top"><span class="badge">红色故事</span><span class="no">第 1 则</span><a class="anchor" href="#red-1">🔗 本篇</a></div>
+<h3>小英雄雨来</h3>
+<div class="body">
+<p>抗日战争的时候，有个叫芦花村的地方，村边有一条大河。村里有个男孩叫雨来，他游泳特别棒，能在水里憋好久的气。</p>
+<p>有一天，八路军的交通员李大叔被鬼子追，跑进了雨来家。雨来家有个秘密的地洞，李大叔钻进洞里，雨来赶紧搬来水缸，把洞口盖得严严实实。</p>
+<p>刚盖好，鬼子就冲进来了，一把抓住雨来。鬼子军官掏出一把亮晶晶的糖，笑眯眯地说：“小孩，告诉我那个人藏在哪儿，这些糖全给你。”</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是雨来，你会怎么做？是说出李大叔藏在哪儿，拿到糖？还是一个字也不说？</p></div>
+<p>雨来看着糖，心里想：“李大叔是打鬼子的好人，我要是说了，他就会被抓走。”他把头一扭，说：“我什么也没看见！”鬼子气坏了，把他拉到河边，要吓唬他。雨来趁鬼子不注意，“扑通”一声跳进河里，一个猛子扎下去，游得远远的。鬼子朝河里找了半天，什么也没找到。</p>
+<p>等鬼子走了，雨来从芦苇丛里探出小脑袋，笑了。李大叔安全了，大家都夸雨来是小英雄。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>雨来为什么不要鬼子的糖？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="red-1">复制本篇链接</button><a href="#cat-red">回到本类目录 ↑</a></div>
+</article>
+</section>
+<section class="cat" id="cat-fable" data-cat="fable" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">
+<div class="cat-head"><h2>成语·寓言·童话<small>4 个</small></h2><p class="intro">每个故事中间有一个选择，讲到那里先停下来问问他。</p>
+<details class="toc"><summary></summary><ol><li><a href="#fable-3">3. 亡羊补牢</a></li><li><a href="#fable-4">4. 小马过河</a></li><li><a href="#fable-1">1. 守株待兔</a></li><li><a href="#fable-2">2. 龟兔赛跑</a></li></ol></details></div>
+<article class="card" id="fable-3" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">
+<div class="card-top"><span class="badge">成语·寓言·童话</span><span class="no">第 3 则</span><a class="anchor" href="#fable-3">🔗 本篇</a></div>
+<h3>亡羊补牢</h3><p class="sub">成语故事</p>
+<div class="body">
+<p>从前，有个人养了一圈羊。</p>
+<p>一天早上，他去数羊，发现少了一只。原来羊圈破了个洞，夜里狼从洞里钻进来，把羊叼走了。</p>
+<p>邻居说：“快把洞补上吧！”</p>
+<p>他摆摆手：“羊都丢了，还补洞干什么？”</p>
+<p>第二天早上，他又去数羊。又少了一只！狼又从那个洞钻进来了。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是他，现在怎么办？</p><ul class="opts"><li>A. 算了，反正羊已经丢了。</li><li>B. 马上把洞补好。</li></ul></div>
+<p>这回他明白了。他说：“现在补，还来得及！”</p>
+<p>他搬来石头和木头，把洞堵得严严实实。</p>
+<p>从那以后，狼再也钻不进来了。他的羊一只也没再丢。</p>
+<p>后来，人们就用“亡羊补牢”这个词，意思是：出了错不要紧，赶快改，就还来得及。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>你有没有做错过事，后来又改好了？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="fable-3">复制本篇链接</button><a href="#cat-fable">回到本类目录 ↑</a></div>
+</article><article class="card" id="fable-4" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">
+<div class="card-top"><span class="badge">成语·寓言·童话</span><span class="no">第 4 则</span><a class="anchor" href="#fable-4">🔗 本篇</a></div>
+<h3>小马过河</h3><p class="sub">童话</p>
+<div class="body">
+<p>小马和妈妈住在一起。一天，妈妈说：“你把这袋麦子送到河对面的磨坊去吧。”</p>
+<p>小马驮着麦子，跑到了河边。河上没有桥，得自己蹚过去。可是，水有多深呢？</p>
+<p>老牛伯伯在河边吃草。他说：“水很浅，才到我的小腿，能过去。”</p>
+<p>小马刚要下水，一只小松鼠跳出来，大叫：“别下去！水可深了！我的伙伴昨天掉进去，差点被冲走！”</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">老牛说浅，松鼠说深。你是小马，你怎么办？</p><ul class="opts"><li>A. 听老牛的，下水。</li><li>B. 听松鼠的，不过河了。</li></ul></div>
+<p>小马不知道该听谁的，只好跑回家问妈妈。</p>
+<p>妈妈笑着说：“老牛那么高，松鼠那么小。光听别人说可不行，你得自己去试一试。”</p>
+<p>小马又跑回河边。它小心地，一步一步往水里走。</p>
+<p>水没有老牛说的那么浅，也没有松鼠说的那么深，刚好到小马的膝盖。</p>
+<p>小马顺顺利利过了河，把麦子送到了磨坊。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>为什么老牛和松鼠说的不一样？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="fable-4">复制本篇链接</button><a href="#cat-fable">回到本类目录 ↑</a></div>
+</article><article class="card" id="fable-1" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">
+<div class="card-top"><span class="badge">成语·寓言·童话</span><span class="no">第 1 则</span><a class="anchor" href="#fable-1">🔗 本篇</a></div>
+<h3>守株待兔</h3><p class="sub">成语故事</p>
+<div class="body">
+<p>从前，有个农夫每天在田里种地。一天，一只兔子飞快地跑过来，“咚”地一下撞在田边的树桩上，晕倒了。农夫白白捡到一只兔子，高兴极了。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">第二天，农夫可以接着去种地，也可以坐在树桩旁边，等下一只兔子撞上来。如果你是农夫，你会怎么选？</p></div>
+<p>农夫想：“种地多累啊，等兔子多轻松！”他扔下锄头，天天坐在树桩旁边等。可是一天、两天、十天过去了，再也没有兔子撞上来。他的田里长满了野草，庄稼全荒了，最后什么也没收到。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>好东西是等来的，还是做出来的？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="fable-1">复制本篇链接</button><a href="#cat-fable">回到本类目录 ↑</a></div>
+</article><article class="card" id="fable-2" style="--c:#23915f;--t:#e5f2ec;--d:#23704d;--s:rgba(35,145,95,.3)">
+<div class="card-top"><span class="badge">成语·寓言·童话</span><span class="no">第 2 则</span><a class="anchor" href="#fable-2">🔗 本篇</a></div>
+<h3>龟兔赛跑</h3><p class="sub">外国经典 · 伊索寓言</p>
+<div class="body">
+<p>兔子总笑乌龟爬得慢。乌龟说：“那我们来比赛吧！”比赛一开始，兔子“嗖”地一下就跑得没影了，乌龟还在后面一步一步慢慢爬。</p>
+<p>兔子回头一看，乌龟远远落在后面，就想：“我先睡一觉，也能赢。”它躺在大树下呼呼大睡。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">乌龟爬得好累，前面的兔子又那么快。如果你是乌龟，你会放弃，还是继续爬？</p></div>
+<p>乌龟心想：“我慢，但我不停下来。”它一步一步往前爬，爬过了睡觉的兔子，爬过了小山坡，最后第一个到了终点。等兔子醒来冲过去，乌龟已经在终点等着它了。</p>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>乌龟跑得慢，为什么还能赢？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="fable-2">复制本篇链接</button><a href="#cat-fable">回到本类目录 ↑</a></div>
+</article>
+</section>
+<section class="cat" id="cat-school" data-cat="school" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="cat-head"><h2>学校里的找茬小故事<small>11 个</small></h2><p class="intro">讲法：一次读一则，读完问问问之：谁做得不对？哪里不对？再问他：换个做法会怎么样？参考答案是给爸爸妈妈看的，孩子说得不一样也没关系，让他多说。</p>
+<details class="toc"><summary></summary><ol><li><a href="#school-2">2. 小胖抢着说</a></li><li><a href="#school-3">3. 阿福拿橡皮</a></li><li><a href="#school-4">4. 小猪想当第一个</a></li><li><a href="#school-5">5. 嘎嘎笑个不停</a></li><li><a href="#school-6">6. 小狮子输不起</a></li><li><a href="#school-7">7. 小卷毛的橙色脚印</a></li><li><a href="#school-8">8. 飞毛腿撞上作业本</a></li><li><a href="#school-9">9. 小松鼠只借不还</a></li><li><a href="#school-10">10. 闪闪发光的点点</a></li><li><a href="#school-11">11. 小企鹅的弹力球</a></li><li><a href="#school-1">1. 小丁喝了一大口</a></li></ol></details></div>
+<article class="card" id="school-2" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 2 则</span><span class="new">新</span><a class="anchor" href="#school-2">🔗 本篇</a></div>
+<h3>小胖抢着说</h3>
+<div class="body">
+<p>上课了，老师问：“谁知道一加一等于几？”</p>
+<p>小胖不举手，大喊：“二！”</p>
+<p>老师又问：“谁知道小兔子爱吃什么？”</p>
+<p>小胖又喊：“胡萝卜！”</p>
+<p>老师说：“这次请莉莉来回答。莉莉，你最喜欢什么颜色？”</p>
+<p>小胖跳起来：“蓝色！”</p>
+<p>莉莉急得脸都红了：“我喜欢粉色！”</p>
+<p>后来，老师问：“小胖，你叫什么名字？”</p>
+<p>全班同学一起大喊：“小——胖——！”</p>
+<p>声音大得把窗外的麻雀都吓飞了，小胖自己一个字也没说上。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小胖哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小胖不举手就抢着喊，把别人回答的机会抢走了，莉莉想说的话都没说成，心里很着急。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小胖先举手，等老师叫他再说，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>大家轮流说，每个人都有机会；老师叫到小胖的时候，他也能好好说完自己的答案。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-2">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-3" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 3 则</span><span class="new">新</span><a class="anchor" href="#school-3">🔗 本篇</a></div>
+<h3>阿福拿橡皮</h3>
+<div class="body">
+<p>阿福写错了一个字，他看见同桌圆圆的桌上有一块草莓橡皮。</p>
+<p>他没问圆圆，拿起来就擦。</p>
+<p>圆圆一回头：“咦，我的橡皮呢？”</p>
+<p>她趴到地上找，钻到桌子底下找，还把铅笔盒倒过来抖了三下。</p>
+<p>前面的同学也帮着找，后面的同学也帮着找。</p>
+<p>最后，全班小朋友都趴在地上，屁股翘得高高的，像一片小蘑菇。</p>
+<p>老师一进门，吓了一跳：“你们在种蘑菇吗？”</p>
+<p>这时候，阿福举起手，小声说：“橡皮……在我这儿。”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">阿福哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>阿福没问圆圆就拿她的橡皮，圆圆以为橡皮丢了，急坏了，大家也白找了半天。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是阿福先问一句“圆圆，我能用一下你的橡皮吗？”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>圆圆知道橡皮在哪儿，就不会着急，说不定还会笑着说“给你用”，大家也不用趴在地上找了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-3">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-4" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 4 则</span><span class="new">新</span><a class="anchor" href="#school-4">🔗 本篇</a></div>
+<h3>小猪想当第一个</h3>
+<div class="body">
+<p>下课铃一响，老师说：“排好队，去操场做游戏！”</p>
+<p>小猪想当第一个，他用肚子使劲一顶——</p>
+<p>前面的小羊往前一扑，小羊顶到了小鸭，小鸭顶到了小鹅。</p>
+<p>大家像一串糖葫芦，“呼噜噜”全挤到了门口。</p>
+<p>门太小，大家卡在那儿，你挤我，我挤你，谁也出不去。</p>
+<p>小鹅喊：“哎哟，我的鞋掉了！”</p>
+<p>小鸭喊：“我的帽子歪了！”</p>
+<p>老师只好说：“全部回来，重新排！”</p>
+<p>这一回，小猪排在了最后一个。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小猪哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小猪在队伍里推人，想挤到前面去，结果大家挤成一团，鞋也掉了，帽子也歪了，谁都不舒服。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小猪好好排队，一个跟着一个走，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>大家很快就能到操场，谁也不会被挤到，还能多玩一会儿。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-4">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-5" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 5 则</span><span class="new">新</span><a class="anchor" href="#school-5">🔗 本篇</a></div>
+<h3>嘎嘎笑个不停</h3>
+<div class="body">
+<p>上课看图说话，贝贝指着一只大河马，大声说：“这是……马河！”</p>
+<p>嘎嘎“哈哈哈”笑起来：“马河！她说马河！”</p>
+<p>贝贝的脸一下子红了，头低得快碰到桌子了。</p>
+<p>嘎嘎还在笑，笑得前仰后合，笑着笑着——“嗝！”</p>
+<p>他打起嗝来了。</p>
+<p>“嗝！嗝！嗝！”怎么也停不下来。</p>
+<p>轮到嘎嘎说了，他指着长颈鹿说：“这是长——嗝——颈——嗝——鹿！”</p>
+<p>他的脸也红得像个大番茄。</p>
+<p>这时候，贝贝小声说：“没关系，喝口水就好了。”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">嘎嘎哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>贝贝说错了，嘎嘎一直笑她，贝贝很难为情，头都抬不起来了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是嘎嘎不笑，而是小声告诉贝贝“是河马哦”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>贝贝就不会难过，还能马上改过来，两个人说不定会成为好朋友。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-5">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-6" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 6 则</span><span class="new">新</span><a class="anchor" href="#school-6">🔗 本篇</a></div>
+<h3>小狮子输不起</h3>
+<div class="body">
+<p>课间，小狮子和大家玩石头剪刀布。</p>
+<p>第一局，他出石头，小兔出布。输了！</p>
+<p>小狮子一跺脚：“不算不算！”</p>
+<p>第二局，他出剪刀，小兔出石头。又输了！</p>
+<p>小狮子气得“嗷——”一声大吼，使劲一跺脚。</p>
+<p>他的鞋子“嗖”地飞了出去，挂在了大树顶上。</p>
+<p>大家抬头看着那只鞋，谁也够不着。</p>
+<p>上课铃响了，小狮子只好单脚跳着回教室，“蹦、蹦、蹦”，一路蹦到了座位上。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小狮子哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小狮子输了就耍赖、大吼、跺脚，大家玩得好好的，被他弄得一点也不开心。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小狮子输了，说一句“再来一局吧”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>大家会高高兴兴地跟他接着玩，说不定下一局他就赢了，鞋子也不会飞到树上去。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-6">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-7" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 7 则</span><span class="new">新</span><a class="anchor" href="#school-7">🔗 本篇</a></div>
+<h3>小卷毛的橙色脚印</h3>
+<div class="body">
+<p>中午吃饭，碗里有胡萝卜丝。</p>
+<p>小卷毛不爱吃，趁没人看，挑出一根扔到桌子底下。</p>
+<p>又挑一根，又扔一根。</p>
+<p>扔着扔着，桌子底下堆成了一座橙色的小山。</p>
+<p>吃完饭，小卷毛站起来，“噗叽”——一脚踩进了小山里。</p>
+<p>他往教室走，一步一个橙色的脚印。</p>
+<p>走廊上，楼梯上，教室门口，全是小脚印。</p>
+<p>值日的小朋友顺着脚印一路找，一直找到了小卷毛的座位下面。</p>
+<p>“原来是你呀！”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小卷毛哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小卷毛不爱吃，就偷偷把菜扔到地上，把地弄脏了，还浪费了粮食，别人还得帮他打扫。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小卷毛跟老师说“我想少要一点胡萝卜”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>老师会少给他盛一点，他试着吃几口就行，地上干干净净，也不浪费。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-7">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-8" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 8 则</span><span class="new">新</span><a class="anchor" href="#school-8">🔗 本篇</a></div>
+<h3>飞毛腿撞上作业本</h3>
+<div class="body">
+<p>课间，飞毛腿在走廊里跑来跑去，“呼——呼——”像一阵风。</p>
+<p>班长抱着一大摞作业本，正慢慢往办公室走。</p>
+<p>飞毛腿拐弯不看路，“砰”地撞了上去。</p>
+<p>作业本“哗啦啦”飞上了天，像下了一场大雪。</p>
+<p>一本落在窗台上，一本挂在消防栓上，一本掉进了垃圾桶，还有一本盖在了校长的头上。</p>
+<p>校长扶了扶眼镜：“这是谁的作业本呀？”</p>
+<p>飞毛腿一看封面，上面写着三个大字：飞毛腿。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">飞毛腿哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>飞毛腿在走廊里乱跑，不看路，撞到了班长，作业本撒了一地，大家都得帮着捡。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是飞毛腿在走廊里慢慢走，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>他就不会撞到人，班长能顺顺利利地把作业本送到办公室，校长也不用顶着作业本了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-8">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-9" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 9 则</span><span class="new">新</span><a class="anchor" href="#school-9">🔗 本篇</a></div>
+<h3>小松鼠只借不还</h3>
+<div class="body">
+<p>小松鼠爱借东西。</p>
+<p>星期一，他借了小猫的铅笔。星期二，借了小鹿的尺子。星期三，借了小刺猬的蜡笔。</p>
+<p>借完了，他全塞进自己的抽屉里，一样也不还。</p>
+<p>到了星期五美术课，小猫没有铅笔，只好用手指头蘸颜料画。</p>
+<p>小鹿没有尺子，画的直线像一条扭来扭去的蚯蚓。</p>
+<p>小松鼠一拉抽屉——“哗啦！”东西太多，全掉了出来，把他的脚都埋住了。</p>
+<p>大家一看：“咦，那不是我的铅笔吗？那不是我的尺子吗？”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小松鼠哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小松鼠借了别人的东西不还，大家要用的时候都没得用，画画都画不好了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小松鼠用完就马上还回去，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>大家的东西都在身边，想用就能用；下次小松鼠再借，大家也愿意借给他。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-9">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-10" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 10 则</span><span class="new">新</span><a class="anchor" href="#school-10">🔗 本篇</a></div>
+<h3>闪闪发光的点点</h3>
+<div class="body">
+<p>课间，点点看见同桌乐乐的书包鼓鼓的。</p>
+<p>“里面装的是什么呀？”</p>
+<p>乐乐不在，点点拉开拉链就翻。</p>
+<p>他翻出一个小盒子，打开盖子——</p>
+<p>“噗！”一大把亮晶晶的金粉飞了出来。</p>
+<p>点点的头发上、脸上、衣服上，全是金粉。</p>
+<p>他一动，就闪闪闪；一眨眼，也闪闪闪。</p>
+<p>乐乐回来了，瞪大眼睛：“那是我给老师做的生日贺卡，还没做完呢！”</p>
+<p>全班都看着点点——他亮得像一棵圣诞树。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">点点哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>书包是乐乐的，点点没经过乐乐同意就偷偷翻，还把乐乐给老师做的礼物弄坏了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是点点等乐乐回来，问一句“你书包里是什么呀？”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>乐乐可能会把贺卡拿出来给他看，说不定还会请他一起帮忙做，两个人都开心。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-10">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-11" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 11 则</span><span class="new">新</span><a class="anchor" href="#school-11">🔗 本篇</a></div>
+<h3>小企鹅的弹力球</h3>
+<div class="body">
+<p>老师在讲怎么写“大”字。</p>
+<p>小企鹅不看黑板，偷偷在桌子底下玩弹力球。</p>
+<p>捏一捏，搓一搓，一松手——</p>
+<p>“嘣！”弹力球跳了出去。</p>
+<p>它蹦到地上，“嘣！”蹦到窗户上，“嘣！”蹦到老师的讲台上，“嘣！”</p>
+<p>最后，“扑通”一声，掉进了教室的鱼缸里。</p>
+<p>小金鱼吓得团团转。</p>
+<p>老师回过头问：“小企鹅，‘大’字怎么写？”</p>
+<p>小企鹅站起来，挠挠头——他一个字也没听见。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小企鹅哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>老师讲课的时候，小企鹅在下面玩弹力球，自己没听课，还吵到了大家，连小金鱼都吓坏了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小企鹅把弹力球放进书包，认真听老师讲，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>他就能学会写“大”字，老师问他，他也能大声答出来，下课再玩球也不迟。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-11">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article><article class="card" id="school-1" style="--c:#2c6fd1;--t:#e6eef9;--d:#29589c;--s:rgba(44,111,209,.3)">
+<div class="card-top"><span class="badge">学校里的找茬小故事</span><span class="no">第 1 则</span><a class="anchor" href="#school-1">🔗 本篇</a></div>
+<h3>小丁喝了一大口</h3>
+<div class="body">
+<p>小丁跑得满头大汗，渴得不得了。</p>
+<p>他看见同桌桌上有个水杯。他没问一声，拿起来就“咕咚”喝了一大口。</p>
+<p>“噗——！”他全喷了出来。</p>
+<p>原来杯子里是苦瓜汁！苦得他的脸皱成了一个小包子。</p>
+<p>喷出来的苦瓜汁，全喷在了同桌的新图画本上。同桌画了一个星期的大恐龙，变成了一只绿乎乎的“苦瓜龙”。</p>
+<p>同桌说：“以后我的东西，你别碰！”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小丁哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小丁没问就喝了同桌的水。别人的杯子不能随便拿来喝，一是不礼貌，二是不知道里面装的是什么，还不卫生。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">如果小丁先问“这是谁的水杯？我能喝吗”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>同桌会告诉他：“这是苦瓜汁，可苦了！”小丁就不会被苦到，恐龙画也不会被喷脏。更好的办法是喝自己的水，或者请老师帮忙倒一杯。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="school-1">复制本篇链接</button><a href="#cat-school">回到本类目录 ↑</a></div>
+</article>
+</section>
+<section class="cat" id="cat-out" data-cat="out" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="cat-head"><h2>学校外的找茬小故事<small>14 个</small></h2><p class="intro">在家、在别人家、小区和跟朋友玩的时候。讲法：一次读一则，读完问问问之：谁做得不对？哪里不对？再问他：换个做法会怎么样？参考答案是给爸爸妈妈看的，孩子说得不一样也没关系，让他多说。</p>
+<details class="toc"><summary></summary><ol><li><a href="#out-5">5. 小熊抱大鱼</a></li><li><a href="#out-6">6. 皮皮蹦沙发</a></li><li><a href="#out-7">7. 嘟嘟按电梯</a></li><li><a href="#out-8">8. 壮壮抢滑板车</a></li><li><a href="#out-9">9. 花卷还要玩</a></li><li><a href="#out-10">10. 臭袜子快乐</a></li><li><a href="#out-11">11. 小土豆拿手机</a></li><li><a href="#out-12">12. 妞妞摘花</a></li><li><a href="#out-13">13. 大嘴巴分饼干</a></li><li><a href="#out-14">14. 唱歌的小黄鸡</a></li><li><a href="#out-1">1. 牛牛和泡泡机</a></li><li><a href="#out-2">2. 跳跳不敲门</a></li><li><a href="#out-3">3. 说了“停”还不停</a></li><li><a href="#out-4">4. 滑滑梯插队</a></li></ol></details></div>
+<article class="card" id="out-5" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 5 则</span><span class="new">新</span><a class="anchor" href="#out-5">🔗 本篇</a></div>
+<h3>小熊抱大鱼</h3>
+<div class="body">
+<p>小熊去好朋友阿虎家做客。</p>
+<p>阿虎的妈妈在厨房忙，小熊溜达过去，一把拉开冰箱门。</p>
+<p>“看看有什么好吃的！”</p>
+<p>他又拉开最下面的冷冻抽屉——</p>
+<p>一条冻得硬邦邦的大鱼“哧溜”滑了出来，“咚”地掉进他怀里。</p>
+<p>“冷冷冷冷！”小熊抱着大鱼满屋子跳。</p>
+<p>他跳进客厅，阿虎的爷爷正在看报纸，抬头一看：“哎呀，鱼怎么自己跑出来了？”</p>
+<p>阿虎哈哈大笑：“小熊，你是来钓鱼的吗？”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小熊哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>冰箱是阿虎家的，小熊没问主人就乱开乱翻，这样不礼貌。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小熊想吃东西，先问一句“阿姨，我可以吃点东西吗？”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>阿姨会给他拿好吃的，说不定还有冰淇淋，他也不用抱着冰块一样的大鱼乱跳了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-5">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-6" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 6 则</span><span class="new">新</span><a class="anchor" href="#out-6">🔗 本篇</a></div>
+<h3>皮皮蹦沙发</h3>
+<div class="body">
+<p>皮皮去小美家做客。</p>
+<p>一进门，他看见一个软软的大沙发，鞋都没脱，“嗷”一声就跳了上去。</p>
+<p>蹦一下，蹦两下，越蹦越高。</p>
+<p>沙发上的靠垫被他弹飞了，“嗖——”飞过客厅。</p>
+<p>“啪！”正好落在桌上的大蛋糕上。</p>
+<p>蛋糕一下子变成了一张扁扁的大饼，奶油挤得到处都是。</p>
+<p>小美的妈妈端着盘子走出来，愣住了：“咦，我的蛋糕怎么变成披萨了？”</p>
+<p>皮皮从沙发上下来，沙发上还留着两个黑黑的鞋印。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">皮皮哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>皮皮在别人家穿着鞋在沙发上乱蹦，把沙发踩脏了，还把人家准备好的蛋糕压扁了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是皮皮好好坐在沙发上，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>沙发干干净净，蛋糕好好的，大家还能一起开开心心地吃蛋糕。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-6">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-7" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 7 则</span><span class="new">新</span><a class="anchor" href="#out-7">🔗 本篇</a></div>
+<h3>嘟嘟按电梯</h3>
+<div class="body">
+<p>嘟嘟和妈妈进了电梯，要去十八楼。</p>
+<p>嘟嘟看见一排圆圆的按钮，觉得太好玩了。</p>
+<p>他“嘀嘀嘀嘀”，从二楼一直按到十七楼，全都亮了。</p>
+<p>电梯“叮”一声停在二楼，门开了，没人。</p>
+<p>“叮”，三楼，门开了，还是没人。</p>
+<p>“叮”，四楼，一只小狗探头看了看，又走了。</p>
+<p>电梯里的王爷爷抱着一个大西瓜，胳膊都酸了。</p>
+<p>一层一层地停，等到了十八楼，王爷爷的西瓜快抱不动了，嘟嘟手里的冰棍也全化了。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">嘟嘟哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>嘟嘟在电梯里乱按按钮，电梯每层都停，大家都得等，王爷爷抱着西瓜累坏了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是嘟嘟只按自己家的十八楼，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>电梯“嗖”一下就到了，王爷爷不用累胳膊，嘟嘟的冰棍也还是凉凉的。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-7">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-8" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 8 则</span><span class="new">新</span><a class="anchor" href="#out-8">🔗 本篇</a></div>
+<h3>壮壮抢滑板车</h3>
+<div class="body">
+<p>小区里，小雨正在玩她的新滑板车。</p>
+<p>壮壮跑过来，一把抢过车把：“给我玩！”</p>
+<p>他跳上去一蹬——滑板车“嗖”地冲了出去。</p>
+<p>壮壮不会刹车，“啊啊啊”地喊着，一直冲进了草坪。</p>
+<p>正好，草坪上的浇水喷头“噗”地打开了。</p>
+<p>水“哗哗哗”地转着圈喷，把壮壮浇成了一只落汤鸡。</p>
+<p>他站在草地中间，头发滴水，鞋子咕叽咕叽响。</p>
+<p>小雨跑过来，小声说：“这个车要先学会刹车呀。”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">壮壮哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>滑板车是小雨的，壮壮没问就抢过来，小雨自己都没得玩了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是壮壮问一句“小雨，我能玩一会儿吗？”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小雨可能会教他怎么骑、怎么刹车，两个人轮流玩，谁也不用变成落汤鸡。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-8">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-9" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 9 则</span><span class="new">新</span><a class="anchor" href="#out-9">🔗 本篇</a></div>
+<h3>花卷还要玩</h3>
+<div class="body">
+<p>花卷和糖糖在小区里玩捉迷藏，玩了一下午。</p>
+<p>糖糖打了个大哈欠：“我累了，我想回家了。”</p>
+<p>花卷拉住他的袖子：“不行，再玩一次！”</p>
+<p>糖糖说：“我真的不想玩了。”</p>
+<p>花卷不管，说：“最后一次！你来找我！”</p>
+<p>说完，他“嗖”地钻进了大树后面的草丛里。</p>
+<p>他蹲啊蹲，等啊等，腿都蹲麻了。</p>
+<p>天黑了，路灯亮了，一只蚊子在他耳边“嗡嗡嗡”地唱歌。</p>
+<p>花卷探出头一看——糖糖早就被妈妈接回家吃饭了。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">花卷哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>糖糖说了累了、不想玩了，花卷还硬拉着他玩，不管糖糖的感受。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是花卷说“好吧，那我们明天再玩”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>糖糖会开开心心地回家休息，明天还愿意跟花卷玩，花卷也不用一个人在草丛里喂蚊子了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-9">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-10" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 10 则</span><span class="new">新</span><a class="anchor" href="#out-10">🔗 本篇</a></div>
+<h3>臭袜子快乐</h3>
+<div class="body">
+<p>妈妈在打电话，给爸爸订生日蛋糕。</p>
+<p>小喇叭在旁边玩，一会儿唱歌，一会儿大喊：“臭袜子！臭袜子！”</p>
+<p>妈妈捂着电话说：“嘘——小声点。”</p>
+<p>小喇叭喊得更响了：“臭——袜——子——！”</p>
+<p>电话那头的叔叔问：“蛋糕上写什么字呀？”</p>
+<p>妈妈说：“生日快乐。”</p>
+<p>叔叔只听见一句：“臭袜子……快乐？”</p>
+<p>晚上，蛋糕送来了。打开一看，上面写着五个大字：臭袜子快乐。</p>
+<p>爸爸看着蛋糕，眨了半天眼睛。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小喇叭哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>妈妈在打电话，小喇叭还在旁边大喊大叫，妈妈说了“小声点”他也不听，吵得电话那头听不清。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小喇叭看见妈妈打电话，就小声地玩，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>叔叔能听清楚，蛋糕上就会写“生日快乐”，爸爸会很高兴，小喇叭也能开开心心地吃蛋糕。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-10">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-11" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 11 则</span><span class="new">新</span><a class="anchor" href="#out-11">🔗 本篇</a></div>
+<h3>小土豆拿手机</h3>
+<div class="body">
+<p>妈妈的手机放在桌上，小土豆没问，拿起来就玩。</p>
+<p>他点点这里，戳戳那里，“嘀、嘀、嘀”。</p>
+<p>屏幕上跳出一卷白白的卫生纸，他觉得好玩，又“嘀嘀嘀”点了好多下。</p>
+<p>第二天，门铃响了。</p>
+<p>快递叔叔搬进来一箱卫生纸，又搬进来一箱，又一箱……</p>
+<p>箱子堆得比冰箱还高，把客厅堆成了一座白色的城堡。</p>
+<p>妈妈站在箱子中间，看着手机：“我什么时候买了二十箱卫生纸？”</p>
+<p>小土豆从箱子后面探出头，小声说：“可能……是我。”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小土豆哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>手机是妈妈的，小土豆没问妈妈就拿来乱点，结果买了一大堆用不完的东西。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小土豆先问“妈妈，我能玩一下手机吗？”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>妈妈会告诉他什么能点、什么不能点，家里就不会被卫生纸堆满了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-11">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-12" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 12 则</span><span class="new">新</span><a class="anchor" href="#out-12">🔗 本篇</a></div>
+<h3>妞妞摘花</h3>
+<div class="body">
+<p>小区的花坛里，开满了红的、黄的、紫的小花，是楼下李奶奶种的。</p>
+<p>妞妞看见了：“这朵好看，摘！那朵也好看，摘！”</p>
+<p>她摘了一大把，还把花插满了头发。</p>
+<p>突然，鼻子痒痒的——“阿——嚏！”</p>
+<p>花瓣“呼”地吹飞了一片。</p>
+<p>“阿嚏！阿嚏！阿嚏！”她一口气打了十个大喷嚏。</p>
+<p>花瓣飞得满天都是，落在小狗身上，落在自行车上，还落进了保安叔叔的茶杯里。</p>
+<p>李奶奶走过来一看，花坛光秃秃的，只剩下一些绿叶子。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">妞妞哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>花是李奶奶辛辛苦苦种的，是给大家看的，妞妞没问就摘光了，大家都看不到了。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是妞妞只是闻一闻、看一看，不摘，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>花坛一直漂漂亮亮的，大家路过都能看，说不定李奶奶还会教妞妞自己种一盆花。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-12">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-13" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 13 则</span><span class="new">新</span><a class="anchor" href="#out-13">🔗 本篇</a></div>
+<h3>大嘴巴分饼干</h3>
+<div class="body">
+<p>大嘴巴带了一大包饼干，和朋友们坐在小区的长椅上。</p>
+<p>小鸭说：“给我一块好吗？”</p>
+<p>大嘴巴说：“等一下。”然后往自己嘴里塞了三块。</p>
+<p>小狗说：“我也想尝尝。”</p>
+<p>大嘴巴说：“等一下。”又往嘴里塞了五块。</p>
+<p>塞呀塞，他的腮帮子鼓得像两个大气球。</p>
+<p>这时候，冰淇淋车“叮叮当当”地开过来了。</p>
+<p>小鸭喊：“我请大家吃冰淇淋！”</p>
+<p>大家都拿到了冰淇淋，大嘴巴也想要，可他嘴里塞得满满的，只能“唔唔唔”。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">大嘴巴哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>说好了跟朋友一起吃饼干，大嘴巴却光顾着往自己嘴里塞，一块也不给别人。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是大嘴巴先给小鸭和小狗每人几块，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>大家一起吃，又开心又热闹，他的嘴巴也空着，就能一起吃冰淇淋了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-13">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-14" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 14 则</span><span class="new">新</span><a class="anchor" href="#out-14">🔗 本篇</a></div>
+<h3>唱歌的小黄鸡</h3>
+<div class="body">
+<p>妈妈带小旋风去超市买菜。</p>
+<p>小旋风一进门就跑，跑到玩具架前，抓起一个盒子就撕。</p>
+<p>“哗啦”，盒子拆开了，里面是一只小黄鸡。</p>
+<p>他一捏，小黄鸡大声唱起来：“咯咯哒！咯咯哒！”</p>
+<p>他想关掉，可是找不到开关。</p>
+<p>他用手捂住它，它唱得更响了：“咯咯哒！咯咯哒！”</p>
+<p>整个超市的人都回过头来看他。</p>
+<p>妈妈只好去付了钱。</p>
+<p>从超市到家，小黄鸡唱了一路；到了晚上睡觉，它还在“咯咯哒”。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">小旋风哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小旋风在超市里乱跑，还没付钱就把玩具盒子拆开了，东西是超市的，不能随便拆。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">要是小旋风拉着妈妈的手，看到喜欢的玩具先问妈妈，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>妈妈可以跟他商量买不买，他也不会被一只关不掉的小黄鸡吵一整晚了。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-14">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-1" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 1 则</span><a class="anchor" href="#out-1">🔗 本篇</a></div>
+<h3>牛牛和泡泡机</h3>
+<div class="body">
+<p>小胖带来一个新泡泡机。一按，“噗噗噗”，满天都是泡泡。</p>
+<p>牛牛冲过去，一把抢过来：“给我玩！”</p>
+<p>他使劲一按，按得太猛了。泡泡水“哗”地喷出来，喷了自己一脸。</p>
+<p>牛牛眼睛睁不开，一边跑一边喊：“我看不见啦！”结果“扑通”一声，坐进了沙坑里。</p>
+<p>小胖“哇”地哭了，整个公园的人都往这边看。</p>
+<p>第二天，牛牛一到公园，小朋友们就喊：“牛牛来了，快把玩具藏起来！”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">谁做得不对？哪里不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>牛牛不对。泡泡机是小胖的，牛牛没问就抢过来了。别人的东西，要先问，人家同意了才能玩。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">如果牛牛先问一句“小胖，我能玩一下吗”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>小胖可能会说“行”，还会教他怎么按才不会喷出来。两个人一起吹泡泡，小胖不会哭，大家也愿意和牛牛玩。就算小胖说“等一会儿”，牛牛等一等，也能轮到。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-1">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-2" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 2 则</span><a class="anchor" href="#out-2">🔗 本篇</a></div>
+<h3>跳跳不敲门</h3>
+<div class="body">
+<p>姐姐在房间里摆多米诺骨牌。她摆了一整个下午，排了长长的一大圈。</p>
+<p>跳跳想找姐姐玩。他没敲门，“砰”地一下推开门就冲了进去。</p>
+<p>门撞倒了第一块骨牌。</p>
+<p>“啪嗒、啪嗒、啪嗒……”骨牌一块推一块，全倒了。最后一块，还“哚”地掉进了姐姐的水杯里。</p>
+<p>姐姐气得脸都红了，像个大番茄。</p>
+<p>第二天，姐姐门上贴了一张纸，上面画着一个大拳头，写着：“跳跳不许进！”</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">跳跳哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>跳跳没敲门就闯进了姐姐的房间。别人的房间，就算是家里人的，也要先敲门，问一声能不能进。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">如果跳跳先敲敲门，问“姐姐，我能进来吗”，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>姐姐会说“等一下，我把骨牌挪开”，或者教跳跳从边上轻轻走进来。骨牌不会倒，姐姐不会生气，说不定还会让跳跳推倒第一块，一起看骨牌“啪啪啪”倒下来。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-2">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-3" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 3 则</span><a class="anchor" href="#out-3">🔗 本篇</a></div>
+<h3>说了“停”还不停</h3>
+<div class="body">
+<p>乐乐喜欢给好朋友豆豆挠痒痒。</p>
+<p>豆豆一边笑一边喊：“停！停！我不要了！”</p>
+<p>乐乐觉得好玩，接着挠。</p>
+<p>豆豆笑得停不下来，腿一蹬，踢翻了桌上的一大碗面条。</p>
+<p>面条“哗”地飞起来，正好扣在了乐乐的头上。乐乐顶着一头面条，像戴了一顶黄色的假发。</p>
+<p>豆豆也不笑了，生气地说：“我说了停，你为什么不停？”</p>
+<p>那天，豆豆一句话也没再跟乐乐说。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">乐乐哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>豆豆已经说了“停”，乐乐还接着挠。豆豆在笑，不等于他喜欢。别人说“停”或者“不要”，就要马上停下来，玩闹的时候也一样。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">如果豆豆一说“停”，乐乐就马上停下来，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>面条不会翻，豆豆也不会生气。豆豆会觉得乐乐听我的话，跟他玩很放心，两个人还是好朋友。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-3">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article><article class="card" id="out-4" style="--c:#e07b12;--t:#fbefe3;--d:#a76017;--s:rgba(224,123,18,.3)">
+<div class="card-top"><span class="badge">学校外的找茬小故事</span><span class="no">第 4 则</span><a class="anchor" href="#out-4">🔗 本篇</a></div>
+<h3>滑滑梯插队</h3>
+<div class="body">
+<p>大家排着队玩滑滑梯。</p>
+<p>壮壮不想等。他从旁边挤过去，把前面的小妹妹挤到了一边，第一个爬了上去。</p>
+<p>他得意地往下一滑——“嗖！”他没看滑梯下面，一下子冲出去，“啪叽”一声，趴进了泥水坑里。</p>
+<p>他站起来，从头到脚都是泥，只露出两只眼睛。</p>
+<p>排队的小朋友都说：“插队的，要排到最后面去！”</p>
+<p>壮壮只好顶着一身泥，排到了最后一个。</p>
+<div class="box find"><div class="label">🔍 找找茬</div><p class="q">壮壮哪里做得不对？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>壮壮插队，还把小妹妹挤开了。大家都在等，排在前面的人先玩，这是大家一起守的规矩。挤别人还容易让人摔倒。</div></details></div>
+<div class="box alt"><div class="label">🔄 换个做法</div><p class="q">如果壮壮好好排队，会怎么样？</p><details class="ans"><summary></summary><div class="ansbody"><b>参考答案：</b>多等一小会儿就轮到他了。他不急不忙，还能看清楚前面的人怎么滑，知道下面有泥坑。大家也愿意和他一起玩，不会把他赶到最后。</div></details></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="out-4">复制本篇链接</button><a href="#cat-out">回到本类目录 ↑</a></div>
+</article>
+</section>
+<section class="cat" id="cat-boundary" data-cat="boundary" style="--c:#8454c8;--t:#f0eaf8;--d:#674596;--s:rgba(132,84,200,.3)">
+<div class="cat-head"><h2>边界感<small>3 个</small></h2><p class="intro">温暖版边界感故事：讲到【停一下】先问问问之会怎么做。</p>
+<details class="toc"><summary></summary><ol><li><a href="#bj-1">1. 豆豆的新汽车</a></li><li><a href="#bj-2">2. 米米不想被捏脸</a></li><li><a href="#bj-3">3. 小猴的画</a></li></ol></details></div>
+<article class="card" id="bj-1" style="--c:#8454c8;--t:#f0eaf8;--d:#674596;--s:rgba(132,84,200,.3)">
+<div class="card-top"><span class="badge">边界感</span><span class="no">第 1 则</span><a class="anchor" href="#bj-1">🔗 本篇</a></div>
+<h3>豆豆的新汽车</h3><p class="sub">和朋友相处：别人的东西，要先问</p>
+<div class="body">
+<p>豆豆有一辆新的红色小汽车。按一下，车灯还会亮。</p>
+<p>乐乐看见了，眼睛都亮了。他特别想玩。</p>
+<p>豆豆正在地上开着小汽车，“嘀嘀嘀”，开得正高兴。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是乐乐，你会怎么做？</p><ul class="opts"><li>A. 一把拿过来，先玩了再说。</li><li>B. 走过去问：“豆豆，我能玩一下吗？”</li></ul></div>
+<p>乐乐走过去，问：“豆豆，我能玩一下吗？”</p>
+<p>豆豆抱紧小汽车，说：“不行，我刚拿到，还想自己玩。”</p>
+<p>乐乐心里有点难过。可他想：这是豆豆的车，豆豆可以说不。</p>
+<p>他说：“好吧。”然后自己去搭积木了。</p>
+<p>他搭了一座好高的桥。豆豆看见了，开着小汽车跑过来：“我的车能从你的桥上过吗？”</p>
+<p>乐乐说：“能！”</p>
+<p>两个人一个搭桥，一个开车，玩得可开心了。过了一会儿，豆豆说：“给你开一圈吧！”</p>
+<div class="box think"><div class="label">🤔 换个做法想一想</div><p class="q">如果乐乐一把抢过小汽车，豆豆会怎么样？他们还能一起玩吗？</p></div>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>别人说“不”的时候，你可以做什么？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="bj-1">复制本篇链接</button><a href="#cat-boundary">回到本类目录 ↑</a></div>
+</article><article class="card" id="bj-2" style="--c:#8454c8;--t:#f0eaf8;--d:#674596;--s:rgba(132,84,200,.3)">
+<div class="card-top"><span class="badge">边界感</span><span class="no">第 2 则</span><a class="anchor" href="#bj-2">🔗 本篇</a></div>
+<h3>米米不想被捏脸</h3><p class="sub">自己的身体，自己做主</p>
+<div class="body">
+<p>米米是个圆脸蛋的小姑娘。</p>
+<p>楼下的王阿姨很喜欢她。每次见面，都要捏捏她的脸：“哎呀，真可爱！”</p>
+<p>可是米米不喜欢。脸被捏得有点疼，她心里也不舒服。</p>
+<p>这天，王阿姨又笑着走过来，伸出了手。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是米米，你会怎么做？</p><ul class="opts"><li>A. 不说话，忍一忍就过去了。</li><li>B. 往后退一步，告诉阿姨自己不喜欢。</li></ul></div>
+<p>米米往后退了一步，大声又有礼貌地说：“阿姨，我不喜欢被捏脸。我们击个掌好吗？”</p>
+<p>王阿姨愣了一下，接着笑了：“好呀！阿姨知道了。”</p>
+<p>“啪！”两个人击了个掌。</p>
+<p>妈妈在旁边摸摸米米的头：“你说得真好。你的身体是你自己的。不舒服，就可以说出来。”</p>
+<p>从那以后，王阿姨每次见到米米，都会举起手：“来，击个掌！”</p>
+<div class="box think"><div class="label">🤔 换个做法想一想</div><p class="q">如果米米一直忍着不说，会怎么样？如果她生气地推开阿姨，又会怎么样？</p></div>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>有没有什么事，是你不喜欢别人对你做的？你会怎么说？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="bj-2">复制本篇链接</button><a href="#cat-boundary">回到本类目录 ↑</a></div>
+</article><article class="card" id="bj-3" style="--c:#8454c8;--t:#f0eaf8;--d:#674596;--s:rgba(132,84,200,.3)">
+<div class="card-top"><span class="badge">边界感</span><span class="no">第 3 则</span><a class="anchor" href="#bj-3">🔗 本篇</a></div>
+<h3>小猴的画</h3><p class="sub">和爸爸妈妈相处：等一等，敲敲门</p>
+<div class="body">
+<p>小猴画了一只大老虎，画得特别好。他拿着画，跑去找爸爸。</p>
+<p>爸爸正在打电话，说的是工作上的事，声音很认真。</p>
+<p>小猴好想马上给爸爸看。</p>
+<div class="box stop"><div class="label">✋ 停一下，问问问之</div><p class="q">如果你是小猴，你会怎么做？</p><ul class="opts"><li>A. 拉着爸爸的袖子喊：“爸爸，快看！快看！”</li><li>B. 先等一等，等爸爸打完电话再给他看。</li></ul></div>
+<p>小猴没有喊。他轻轻站在旁边，把画举了起来，小声说：“我等你。”</p>
+<p>爸爸看见了，对他竖了竖大拇指，又比了个“等一下”的手势。</p>
+<p>过了一会儿，爸爸打完电话，蹲下来，认认真真地看了好久：“这只老虎真威风！谢谢你等我。”</p>
+<p>晚上，小猴在房间里搭积木。“咚咚咚”，有人敲门。</p>
+<p>“小猴，爸爸可以进来吗？”</p>
+<p>小猴笑了：原来，爸爸也会等我呀。</p>
+<div class="box think"><div class="label">🤔 换个做法想一想</div><p class="q">如果小猴一直拉着爸爸大喊，爸爸的电话还能打好吗？爸爸能好好看他的画吗？</p></div>
+<div class="box talk"><div class="label">💬 聊一聊</div><p>在家里，你想让爸爸妈妈进你房间前先敲门吗？</p></div>
+</div>
+<div class="card-foot"><button class="copy" data-id="bj-3">复制本篇链接</button><a href="#cat-boundary">回到本类目录 ↑</a></div>
+</article>
+</section>
+</main>
+<footer>
+  最近更新：2026年9月27日 · 共 35 个故事<br>
+  小提示：点右上角「···」→「收藏」或「在浏览器打开」，以后刷新就能看到新故事。
+</footer>
+<div id="toast"></div>
+<script>
+(function(){
+  var chips=document.querySelectorAll('#chips a'), secs=document.querySelectorAll('section.cat');
+  function setChip(f){for(var i=0;i<chips.length;i++){chips[i].classList.toggle('on',chips[i].getAttribute('data-f')===f);}}
+  function filter(f){
+    document.body.classList.toggle('filtering',f!=='all'&&f!=='latest');
+    for(var i=0;i<secs.length;i++){secs[i].style.display=(f==='all'||f==='latest'||secs[i].getAttribute('data-cat')===f)?'':'none';}
+    setChip(f);
+  }
+  for(var i=0;i<chips.length;i++){chips[i].addEventListener('click',function(e){
+    var f=this.getAttribute('data-f'); e.preventDefault(); filter(f);
+    var t=f==='all'?document.body:(f==='latest'?document.getElementById('latest'):document.getElementById('cat-'+f));
+    if(f==='all'){window.scrollTo(0,0);history.replaceState(null,'',location.pathname+location.search);}
+    else{t&&t.scrollIntoView();history.replaceState(null,'','#'+(f==='latest'?'latest':'cat-'+f));}
+  });}
+  var h=location.hash.replace('#','');
+  if(h.indexOf('cat-')===0){filter(h.slice(4));var el=document.getElementById(h);el&&el.scrollIntoView();}
+  function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show');},2200);}
+  function copy(text){
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(function(){toast('链接已复制，可以发给家人或收藏');},function(){fallback(text);});}
+    else fallback(text);
+  }
+  function fallback(text){var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+    var ok=false;try{ok=document.execCommand('copy');}catch(e){} document.body.removeChild(ta); toast(ok?'链接已复制，可以发给家人或收藏':'请长按复制：'+text);}
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('button.copy');if(!b)return;
+    copy(location.origin+location.pathname+'#'+b.getAttribute('data-id'));});
+})();
+</script>
+</body>
+</html>
